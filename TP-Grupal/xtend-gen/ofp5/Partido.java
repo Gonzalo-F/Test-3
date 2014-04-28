@@ -3,6 +3,7 @@ package ofp5;
 import com.google.common.base.Objects;
 import java.util.Collection;
 import ofp5.InscEstandar;
+import ofp5.InscSolidario;
 import ofp5.Jugador;
 
 @SuppressWarnings("all")
@@ -78,6 +79,12 @@ public class Partido {
     if (_equals) {
       InscEstandar _inscEstandar = new InscEstandar();
       _inscEstandar.inscribir(jugador, this);
+    } else {
+      boolean _equals_1 = Objects.equal(tipoInscripcion, "solidario");
+      if (_equals_1) {
+        InscSolidario _inscSolidario = new InscSolidario();
+        _inscSolidario.inscribir(jugador, this);
+      }
     }
   }
   
