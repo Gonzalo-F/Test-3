@@ -5,6 +5,8 @@ import java.util.Collection
 class Partido {
 	@Property String lugar
 	@Property Collection<Jugador> jugadores
+	@Property Collection<Jugador> solidarios
+	@Property Collection<Jugador> condicionales
 	@Property int hora
 	@Property int fecha
 	
@@ -14,8 +16,23 @@ class Partido {
 		this.lugar = lugar
 	}
 	
-	def agregarJugador(Jugador unJugador){
-		jugadores.add(unJugador)
+	
+	def inscribirA(Jugador jugador, String tipoInscripcion){
+		if (tipoInscripcion == "estandar"){
+			new InscEstandar().inscribir(jugador, this)
+		}
+	}
+	
+	def agregarJugador(Jugador jugador, String tipoInscripcion){
+		if (tipoInscripcion == "estandar"){
+			jugadores.add(jugador)
+			}
+		else if(tipoInscripcion == "solidario"){
+				solidarios.add(jugador)
+			}
+			else{
+				condicionales.add(jugador)
+			}
 	}
 	
 }

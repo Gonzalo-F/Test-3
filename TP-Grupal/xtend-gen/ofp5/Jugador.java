@@ -1,6 +1,5 @@
 package ofp5;
 
-import ofp5.InscEstandar;
 import ofp5.Partido;
 
 @SuppressWarnings("all")
@@ -15,13 +14,11 @@ public class Jugador {
     this._edad = edad;
   }
   
-  private InscEstandar tipoInscripcion;
-  
   public Jugador(final int edad) {
     this.setEdad(edad);
   }
   
-  public void inscribirse(final Partido partido) {
-    this.tipoInscripcion.inscribir(this, partido);
+  public void inscribirseA(final Partido partido, final String tipoInscripcion) {
+    partido.inscribirA(this, tipoInscripcion);
   }
 }

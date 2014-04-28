@@ -1,6 +1,8 @@
 package ofp5;
 
+import com.google.common.base.Objects;
 import java.util.Collection;
+import ofp5.InscEstandar;
 import ofp5.Jugador;
 
 @SuppressWarnings("all")
@@ -23,6 +25,26 @@ public class Partido {
   
   public void setJugadores(final Collection<Jugador> jugadores) {
     this._jugadores = jugadores;
+  }
+  
+  private Collection<Jugador> _solidarios;
+  
+  public Collection<Jugador> getSolidarios() {
+    return this._solidarios;
+  }
+  
+  public void setSolidarios(final Collection<Jugador> solidarios) {
+    this._solidarios = solidarios;
+  }
+  
+  private Collection<Jugador> _condicionales;
+  
+  public Collection<Jugador> getCondicionales() {
+    return this._condicionales;
+  }
+  
+  public void setCondicionales(final Collection<Jugador> condicionales) {
+    this._condicionales = condicionales;
   }
   
   private int _hora;
@@ -51,8 +73,32 @@ public class Partido {
     this.setLugar(lugar);
   }
   
-  public boolean agregarJugador(final Jugador unJugador) {
-    Collection<Jugador> _jugadores = this.getJugadores();
-    return _jugadores.add(unJugador);
+  public void inscribirA(final Jugador jugador, final String tipoInscripcion) {
+    boolean _equals = Objects.equal(tipoInscripcion, "estandar");
+    if (_equals) {
+      InscEstandar _inscEstandar = new InscEstandar();
+      _inscEstandar.inscribir(jugador, this);
+    }
+  }
+  
+  public boolean agregarJugador(final Jugador jugador, final String tipoInscripcion) {
+    boolean _xifexpression = false;
+    boolean _equals = Objects.equal(tipoInscripcion, "estandar");
+    if (_equals) {
+      Collection<Jugador> _jugadores = this.getJugadores();
+      _xifexpression = _jugadores.add(jugador);
+    } else {
+      boolean _xifexpression_1 = false;
+      boolean _equals_1 = Objects.equal(tipoInscripcion, "solidario");
+      if (_equals_1) {
+        Collection<Jugador> _solidarios = this.getSolidarios();
+        _xifexpression_1 = _solidarios.add(jugador);
+      } else {
+        Collection<Jugador> _condicionales = this.getCondicionales();
+        _xifexpression_1 = _condicionales.add(jugador);
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return _xifexpression;
   }
 }

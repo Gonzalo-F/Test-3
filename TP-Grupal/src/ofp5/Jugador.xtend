@@ -2,9 +2,6 @@ package ofp5
 
 class Jugador {
 	@Property int edad
-	
-	InscEstandar tipoInscripcion
-	
 	 
 	
 	new(int edad){
@@ -12,8 +9,8 @@ class Jugador {
 		
 	}
 	
-	def void inscribirse(Partido partido){
-		tipoInscripcion.inscribir(this, partido)
+	def void inscribirseA(Partido partido, String tipoInscripcion){
+		partido.inscribirA(this, tipoInscripcion)
 	}
 	
 }
