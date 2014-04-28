@@ -4,9 +4,9 @@ import java.util.Collection
 
 class Partido {
 	@Property String lugar
-	@Property Collection<Jugador> jugadores
-	@Property Collection<Jugador> solidarios
-	@Property Collection<Jugador> condicionales
+	@Property ArrayList<Jugador> jugadores
+	@Property ArrayList<Jugador> solidarios
+	@Property ArrayList<Jugador> condicionales
 	@Property int hora
 	@Property int fecha
 	
