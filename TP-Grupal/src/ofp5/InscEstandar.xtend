@@ -2,7 +2,11 @@ package ofp5
 
 class InscEstandar implements Inscripcion {
 	
-	override inscribirse (Partido partido){
-		partido.agregarJugador (this)
+	override inscribir (Jugador jugador, Partido partido){
+		if (partido.jugadores.size < 10){	
+		
+			partido.agregarJugador (jugador)
+		
+		}
 	}
 }

@@ -1,5 +1,6 @@
 package ofp5
 
 interface Inscripcion {
-	def void inscribirse(Partido partido);
+	def void inscribir(Jugador jugador, Partido partido)
+	
 }

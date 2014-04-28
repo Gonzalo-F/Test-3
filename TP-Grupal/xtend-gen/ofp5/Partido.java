@@ -44,4 +44,15 @@ public class Partido {
   public void setFecha(final int fecha) {
     this._fecha = fecha;
   }
+  
+  public Partido(final int hora, final int fecha, final String lugar) {
+    this.setHora(hora);
+    this.setFecha(fecha);
+    this.setLugar(lugar);
+  }
+  
+  public boolean agregarJugador(final Jugador unJugador) {
+    Collection<Jugador> _jugadores = this.getJugadores();
+    return _jugadores.add(unJugador);
+  }
 }
