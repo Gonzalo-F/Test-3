@@ -1,7 +1,7 @@
 package ofp5;
 
 import com.google.common.base.Objects;
-import java.util.Collection;
+import java.util.ArrayList;
 import ofp5.InscEstandar;
 import ofp5.InscSolidario;
 import ofp5.Jugador;
@@ -18,33 +18,33 @@ public class Partido {
     this._lugar = lugar;
   }
   
-  private Collection<Jugador> _jugadores;
+  private ArrayList<Jugador> _jugadores;
   
-  public Collection<Jugador> getJugadores() {
+  public ArrayList<Jugador> getJugadores() {
     return this._jugadores;
   }
   
-  public void setJugadores(final Collection<Jugador> jugadores) {
+  public void setJugadores(final ArrayList<Jugador> jugadores) {
     this._jugadores = jugadores;
   }
   
-  private Collection<Jugador> _solidarios;
+  private ArrayList<Jugador> _solidarios;
   
-  public Collection<Jugador> getSolidarios() {
+  public ArrayList<Jugador> getSolidarios() {
     return this._solidarios;
   }
   
-  public void setSolidarios(final Collection<Jugador> solidarios) {
+  public void setSolidarios(final ArrayList<Jugador> solidarios) {
     this._solidarios = solidarios;
   }
   
-  private Collection<Jugador> _condicionales;
+  private ArrayList<Jugador> _condicionales;
   
-  public Collection<Jugador> getCondicionales() {
+  public ArrayList<Jugador> getCondicionales() {
     return this._condicionales;
   }
   
-  public void setCondicionales(final Collection<Jugador> condicionales) {
+  public void setCondicionales(final ArrayList<Jugador> condicionales) {
     this._condicionales = condicionales;
   }
   
@@ -92,16 +92,16 @@ public class Partido {
     boolean _xifexpression = false;
     boolean _equals = Objects.equal(tipoInscripcion, "estandar");
     if (_equals) {
-      Collection<Jugador> _jugadores = this.getJugadores();
+      ArrayList<Jugador> _jugadores = this.getJugadores();
       _xifexpression = _jugadores.add(jugador);
     } else {
       boolean _xifexpression_1 = false;
       boolean _equals_1 = Objects.equal(tipoInscripcion, "solidario");
       if (_equals_1) {
-        Collection<Jugador> _solidarios = this.getSolidarios();
+        ArrayList<Jugador> _solidarios = this.getSolidarios();
         _xifexpression_1 = _solidarios.add(jugador);
       } else {
-        Collection<Jugador> _condicionales = this.getCondicionales();
+        ArrayList<Jugador> _condicionales = this.getCondicionales();
         _xifexpression_1 = _condicionales.add(jugador);
       }
       _xifexpression = _xifexpression_1;

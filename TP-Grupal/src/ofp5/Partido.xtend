@@ -1,6 +1,6 @@
 package ofp5
 
-import java.util.Collection
+import java.util.ArrayList
 
 class Partido {
 	@Property String lugar
