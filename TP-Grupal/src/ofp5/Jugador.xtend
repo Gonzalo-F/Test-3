@@ -10,7 +10,13 @@ class Jugador {
 	}
 	
 	def void inscribirseA(Partido partido, String tipoInscripcion){
-		partido.inscribirA(this, tipoInscripcion)
+		if (tipoInscripcion == "estandar"){
+			new InscEstandar().inscribir(this, partido)
+			}
+		else if(tipoInscripcion == "solidario"){
+			new InscSolidario().inscribir(this, partido)
+			}
+	
 	}
 	
 	def estaEnElPartido(Partido partido) {

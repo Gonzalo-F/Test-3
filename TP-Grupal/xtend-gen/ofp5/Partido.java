@@ -2,8 +2,6 @@ package ofp5;
 
 import com.google.common.base.Objects;
 import java.util.ArrayList;
-import ofp5.InscEstandar;
-import ofp5.InscSolidario;
 import ofp5.Jugador;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
@@ -79,20 +77,6 @@ public class Partido {
     this.setSolidarios(_newArrayList_1);
     ArrayList<Jugador> _newArrayList_2 = CollectionLiterals.<Jugador>newArrayList();
     this.setCondicionales(_newArrayList_2);
-  }
-  
-  public void inscribirA(final Jugador jugador, final String tipoInscripcion) {
-    boolean _equals = Objects.equal(tipoInscripcion, "estandar");
-    if (_equals) {
-      InscEstandar _inscEstandar = new InscEstandar();
-      _inscEstandar.inscribir(jugador, this);
-    } else {
-      boolean _equals_1 = Objects.equal(tipoInscripcion, "solidario");
-      if (_equals_1) {
-        InscSolidario _inscSolidario = new InscSolidario();
-        _inscSolidario.inscribir(jugador, this);
-      }
-    }
   }
   
   public boolean agregarJugador(final Jugador jugador, final String tipoInscripcion) {

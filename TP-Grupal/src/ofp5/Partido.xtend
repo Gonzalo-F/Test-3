@@ -20,15 +20,6 @@ class Partido {
 	}
 	
 	
-	def inscribirA(Jugador jugador, String tipoInscripcion){
-		if (tipoInscripcion == "estandar"){
-			new InscEstandar().inscribir(jugador, this)
-			}
-		else if(tipoInscripcion == "solidario"){
-			new InscSolidario().inscribir(jugador, this)
-			}
-	}
-	
 	def agregarJugador(Jugador jugador, String tipoInscripcion){
 		if (tipoInscripcion == "estandar"){
 			jugadores.add(jugador)

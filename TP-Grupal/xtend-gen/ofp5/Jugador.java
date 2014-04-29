@@ -1,5 +1,8 @@
 package ofp5;
 
+import com.google.common.base.Objects;
+import ofp5.InscEstandar;
+import ofp5.InscSolidario;
 import ofp5.Partido;
 
 @SuppressWarnings("all")
@@ -19,7 +22,17 @@ public class Jugador {
   }
   
   public void inscribirseA(final Partido partido, final String tipoInscripcion) {
-    partido.inscribirA(this, tipoInscripcion);
+    boolean _equals = Objects.equal(tipoInscripcion, "estandar");
+    if (_equals) {
+      InscEstandar _inscEstandar = new InscEstandar();
+      _inscEstandar.inscribir(this, partido);
+    } else {
+      boolean _equals_1 = Objects.equal(tipoInscripcion, "solidario");
+      if (_equals_1) {
+        InscSolidario _inscSolidario = new InscSolidario();
+        _inscSolidario.inscribir(this, partido);
+      }
+    }
   }
   
   public boolean estaEnElPartido(final Partido partido) {
