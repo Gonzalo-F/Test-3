@@ -1,7 +1,7 @@
 package tests;
 
-import ofp5.Jugador;
-import ofp5.Partido;
+import ofp5Statefull.Jugador;
+import ofp5Statefull.Partido;
 import org.junit.Assert;
 import org.junit.Test;
 
