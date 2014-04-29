@@ -3,11 +3,10 @@ package ofp5
 import java.util.ArrayList
 
 class Partido {
-	@Property
 	String lugar
-	ArrayList<Jugador> jugadores
-	ArrayList<Jugador> solidarios
-	ArrayList<Jugador> condicionales
+	@Property ArrayList<Jugador> jugadores
+	@Property ArrayList<Jugador> solidarios
+	@Property ArrayList<Jugador> condicionales
 	int hora
 	int fecha
 
@@ -20,29 +19,46 @@ class Partido {
 		this.condicionales = newArrayList()
 	}
 
-	/* */
 	def inscribirA(Jugador jugador, String tipoInscripcion) {
 		switch tipoInscripcion {
-			case "estandar":
-			if (this.tamanioLista() < 10) {
-				jugadores.add(jugador)
+		case "estandar":
+			{
+				new InscEstandar().inscribir(jugador, this)
 			}
 		case "solidario":
-			solidarios.add(jugador)
+			{
+				new InscSolidario().inscribir(jugador, this)
+			}
 		case "condicional":
-			if (condicion) { /*Ojo esto: yo creo que condicion deberia ser un Boolean, NO un metodo booleano */
+			{ 
 				condicionales.add(jugador)
 			}
 		}
 	}
-
-def int	tamanioLista(){
-		jugadores.size
+	
+	def agregarJugador(Jugador jugador, String tipoInscripcion){
+		switch tipoInscripcion {
+		case "estandar":
+			{
+				jugadores.add(jugador)
+			}
+		case "solidario":
+			{
+				solidarios.add(jugador)
+			}
+		}
 	}
 
-	def	tieneJugador(Jugador jugador) {
-		/*HELP!!!! */
-		jugadores.exists[unJugador | unJugador.getNombre() = jugador.getNombre()]
+def estaInscripto(Jugador jugador, String tipoInscripcion){
+	switch tipoInscripcion {
+		case "estandar":
+			{
+				jugadores.contains(jugador)
+			}
+		case "solidario":
+			{
+				solidarios.contains(jugador)
+			}
+		}
 	}
-
 }

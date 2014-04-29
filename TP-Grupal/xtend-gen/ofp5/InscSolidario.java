@@ -13,6 +13,12 @@ public class InscSolidario implements Inscripcion {
     boolean _lessThan = (_size < 10);
     if (_lessThan) {
       partido.agregarJugador(jugador, "solidario");
+    } else {
+      ArrayList<Jugador> _solidarios = partido.getSolidarios();
+      ArrayList<Jugador> _solidarios_1 = partido.getSolidarios();
+      Jugador _get = _solidarios_1.get(1);
+      _solidarios.remove(_get);
+      partido.agregarJugador(jugador, "solidario");
     }
   }
 }

@@ -2,20 +2,14 @@ package ofp5;
 
 import com.google.common.base.Objects;
 import java.util.ArrayList;
+import ofp5.InscEstandar;
+import ofp5.InscSolidario;
 import ofp5.Jugador;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
 @SuppressWarnings("all")
 public class Partido {
-  private String _lugar;
-  
-  public String getLugar() {
-    return this._lugar;
-  }
-  
-  public void setLugar(final String lugar) {
-    this._lugar = lugar;
-  }
+  private String lugar;
   
   private ArrayList<Jugador> _jugadores;
   
@@ -47,30 +41,14 @@ public class Partido {
     this._condicionales = condicionales;
   }
   
-  private int _hora;
+  private int hora;
   
-  public int getHora() {
-    return this._hora;
-  }
-  
-  public void setHora(final int hora) {
-    this._hora = hora;
-  }
-  
-  private int _fecha;
-  
-  public int getFecha() {
-    return this._fecha;
-  }
-  
-  public void setFecha(final int fecha) {
-    this._fecha = fecha;
-  }
+  private int fecha;
   
   public Partido(final int hora, final int fecha, final String lugar) {
-    this.setHora(hora);
-    this.setFecha(fecha);
-    this.setLugar(lugar);
+    this.hora = hora;
+    this.fecha = fecha;
+    this.lugar = lugar;
     ArrayList<Jugador> _newArrayList = CollectionLiterals.<Jugador>newArrayList();
     this.setJugadores(_newArrayList);
     ArrayList<Jugador> _newArrayList_1 = CollectionLiterals.<Jugador>newArrayList();
@@ -79,29 +57,70 @@ public class Partido {
     this.setCondicionales(_newArrayList_2);
   }
   
-  public boolean agregarJugador(final Jugador jugador, final String tipoInscripcion) {
-    boolean _xifexpression = false;
-    boolean _equals = Objects.equal(tipoInscripcion, "estandar");
-    if (_equals) {
-      ArrayList<Jugador> _jugadores = this.getJugadores();
-      _xifexpression = _jugadores.add(jugador);
-    } else {
-      boolean _xifexpression_1 = false;
-      boolean _equals_1 = Objects.equal(tipoInscripcion, "solidario");
-      if (_equals_1) {
-        ArrayList<Jugador> _solidarios = this.getSolidarios();
-        _xifexpression_1 = _solidarios.add(jugador);
-      } else {
-        ArrayList<Jugador> _condicionales = this.getCondicionales();
-        _xifexpression_1 = _condicionales.add(jugador);
+  public Boolean inscribirA(final Jugador jugador, final String tipoInscripcion) {
+    boolean _switchResult = false;
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(tipoInscripcion,"estandar")) {
+        _matched=true;
+        InscEstandar _inscEstandar = new InscEstandar();
+        _inscEstandar.inscribir(jugador, this);
       }
-      _xifexpression = _xifexpression_1;
     }
-    return _xifexpression;
+    if (!_matched) {
+      if (Objects.equal(tipoInscripcion,"solidario")) {
+        _matched=true;
+        InscSolidario _inscSolidario = new InscSolidario();
+        _inscSolidario.inscribir(jugador, this);
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(tipoInscripcion,"condicional")) {
+        _matched=true;
+        ArrayList<Jugador> _condicionales = this.getCondicionales();
+        _switchResult = _condicionales.add(jugador);
+      }
+    }
+    return _switchResult;
   }
   
-  public boolean tieneJugador(final Jugador jugador) {
-    ArrayList<Jugador> _jugadores = this.getJugadores();
-    return _jugadores.contains(jugador);
+  public boolean agregarJugador(final Jugador jugador, final String tipoInscripcion) {
+    boolean _switchResult = false;
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(tipoInscripcion,"estandar")) {
+        _matched=true;
+        ArrayList<Jugador> _jugadores = this.getJugadores();
+        _switchResult = _jugadores.add(jugador);
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(tipoInscripcion,"solidario")) {
+        _matched=true;
+        ArrayList<Jugador> _solidarios = this.getSolidarios();
+        _switchResult = _solidarios.add(jugador);
+      }
+    }
+    return _switchResult;
+  }
+  
+  public boolean estaInscripto(final Jugador jugador, final String tipoInscripcion) {
+    boolean _switchResult = false;
+    boolean _matched = false;
+    if (!_matched) {
+      if (Objects.equal(tipoInscripcion,"estandar")) {
+        _matched=true;
+        ArrayList<Jugador> _jugadores = this.getJugadores();
+        _switchResult = _jugadores.contains(jugador);
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(tipoInscripcion,"solidario")) {
+        _matched=true;
+        ArrayList<Jugador> _solidarios = this.getSolidarios();
+        _switchResult = _solidarios.contains(jugador);
+      }
+    }
+    return _switchResult;
   }
 }

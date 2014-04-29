@@ -11,34 +11,9 @@ class Jugador {
 		this.nombre = nombre
 	}
 	
-	def void inscribirseA(Partido partido, String tipoInscripcion){
-		if (tipoInscripcion == "estandar"){
-			new InscEstandar().inscribir(this, partido)
-			}
-		else if(tipoInscripcion == "solidario"){
-			new InscSolidario().inscribir(this, partido)
-			}
-	
-	}
-	
-	def estaEnElPartido(Partido partido) {
- 		partido.tieneJugador(this)
-  	}
-
-	def void inscribirseCondicional(Partido partido, String condicion, int valorNum, int valorNum2, String valorText){
-		if (condicion == "edad"){
-			new InscCondEdad().inscribir(this, partido, valorNum, valorNum2)
-			}
-		else if (condicion == "lugar"){
-				new InscCondLugar().inscribir(this, partido, valorText)
-				}
-			else if(condicion == "fecha"){
-					new InscCondFecha().inscribir(this, partido, valorNum)
-				}
-	}
-	
-	def getNombre() {
-	nombre
+	def getNombre() 
+	{
+		nombre
 	}
 
 }
