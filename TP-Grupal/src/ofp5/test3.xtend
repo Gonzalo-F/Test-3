@@ -7,7 +7,7 @@ package ofp5
  	@Test
  	def testInscribirEstandar() {
  		var Partido partido = new Partido(2040, 20140413, 'Tinglado')
- 		var Jugador jugador = new Jugador(15)
+ 		var Jugador jugador = new Jugador(15, "Pirulito")
  		jugador.inscribirseA(partido, 'estandar')
  		assertTrue(jugador.estaEnElPartido(partido))
  

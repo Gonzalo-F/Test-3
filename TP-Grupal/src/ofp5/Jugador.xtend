@@ -1,12 +1,14 @@
 package ofp5
 
 class Jugador {
-	@Property int edad
+	@Property
+	int edad
+	String nombre
 	 
 	
-	new(int edad){
+	new(int edad, String nombre){
 		this.edad = edad
-		
+		this.nombre = nombre
 	}
 	
 	def void inscribirseA(Partido partido, String tipoInscripcion){
@@ -33,6 +35,10 @@ class Jugador {
 			else if(condicion == "fecha"){
 					new InscCondFecha().inscribir(this, partido, valorNum)
 				}
+	}
+	
+	def getNombre() {
+	nombre
 	}
 
 }
