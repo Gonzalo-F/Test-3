@@ -7,6 +7,8 @@ class InscEstandar implements Inscripcion {
 		
 			partido.agregarJugador (jugador, 'estandar')
 		
+		} else {
+			throw new excepciones.InscripcionRechazadaException ("Ya hay 10 inscriptos")
 		}
 	}
 }

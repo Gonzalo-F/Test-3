@@ -21,7 +21,7 @@ package tests
  	}
 
  	@Test
- 	def void testInscribirJugadorMasde10enEstandarRechaza(){
+ 	def testInscribirJugadorMasde10enEstandarRechaza(){
  		var ofp5.Partido partido = new ofp5.Partido(2040, 20140413, 'Tinglado')
  		var ofp5.Jugador jugador1 = new ofp5.Jugador(15, "Player1")
  		partido.inscribirA(jugador1, 'estandar')
@@ -43,11 +43,11 @@ package tests
  		partido.inscribirA(jugador9, 'estandar')
  		var ofp5.Jugador jugador10 = new ofp5.Jugador(15, "Player10")
  		partido.inscribirA(jugador10, 'estandar')
- 		var ofp5.Jugador jugador11 = new ofp5.Jugador(15, "Player10")
+ 		var ofp5.Jugador jugador11 = new ofp5.Jugador(15, "Player11")
  		try {
  			partido.inscribirA(jugador11, 'estandar')
  			} catch (excepciones.InscripcionRechazadaException e){
- 				fail()
+ 			return
  			}
  	}
  }
