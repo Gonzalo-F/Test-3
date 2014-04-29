@@ -21,4 +21,12 @@ public class Jugador {
   public void inscribirseA(final Partido partido, final String tipoInscripcion) {
     partido.inscribirA(this, tipoInscripcion);
   }
+  
+  public void inscribirseCondicional(final Partido partido, final String condicion, final int valorNum, final int valorNum2, final String valorText) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nInscCondLugar cannot be resolved."
+      + "\nInscCondFecha cannot be resolved."
+      + "\ninscribir cannot be resolved"
+      + "\ninscribir cannot be resolved");
+  }
 }
