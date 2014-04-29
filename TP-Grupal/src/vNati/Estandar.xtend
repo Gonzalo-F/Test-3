@@ -1,10 +1,11 @@
+package vNati 
 
 class Estandar implements TipoInscripcion {
 	 @Property Partido partido
 	override inscribir (Jugador jugador){
-		if (this.partido.jugadores.size < 10){	
+		if (this.getPartido.getJugadores.size < 10){	
 		
-			partido.agregarJugador (jugador, "estandar")
+			getPartido.agregarJugador (jugador, "estandar")
 		
 		}
 	}

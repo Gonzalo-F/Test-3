@@ -13,7 +13,9 @@ class Jugador {
 		partido.inscribirA(this, tipoInscripcion)
 	}
 	
-
+	def estaEnElPartido(Partido partido) {
+ 		partido.tieneJugador(this)
+  	}
 
 	def void inscribirseCondicional(Partido partido, String condicion, int valorNum, int valorNum2, String valorText){
 		if (condicion == "edad"){

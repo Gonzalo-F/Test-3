@@ -22,6 +22,10 @@ public class Jugador {
     partido.inscribirA(this, tipoInscripcion);
   }
   
+  public boolean estaEnElPartido(final Partido partido) {
+    return partido.tieneJugador(this);
+  }
+  
   public void inscribirseCondicional(final Partido partido, final String condicion, final int valorNum, final int valorNum2, final String valorText) {
     throw new Error("Unresolved compilation problems:"
       + "\nInscCondLugar cannot be resolved."

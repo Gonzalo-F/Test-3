@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import ofp5.InscEstandar;
 import ofp5.InscSolidario;
 import ofp5.Jugador;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
 @SuppressWarnings("all")
 public class Partido {
@@ -72,6 +73,12 @@ public class Partido {
     this.setHora(hora);
     this.setFecha(fecha);
     this.setLugar(lugar);
+    ArrayList<Jugador> _newArrayList = CollectionLiterals.<Jugador>newArrayList();
+    this.setJugadores(_newArrayList);
+    ArrayList<Jugador> _newArrayList_1 = CollectionLiterals.<Jugador>newArrayList();
+    this.setSolidarios(_newArrayList_1);
+    ArrayList<Jugador> _newArrayList_2 = CollectionLiterals.<Jugador>newArrayList();
+    this.setCondicionales(_newArrayList_2);
   }
   
   public void inscribirA(final Jugador jugador, final String tipoInscripcion) {
@@ -107,5 +114,10 @@ public class Partido {
       _xifexpression = _xifexpression_1;
     }
     return _xifexpression;
+  }
+  
+  public boolean tieneJugador(final Jugador jugador) {
+    ArrayList<Jugador> _jugadores = this.getJugadores();
+    return _jugadores.contains(jugador);
   }
 }

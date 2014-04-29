@@ -1,10 +1,11 @@
+package vNati 
 
 class Solidario implements TipoInscripcion {
 	 @Property Partido partido
 	 override inscribir (Jugador jugador){
-	 	if (this.partido.jugadores.size < 10){	
+	 	if (this.getPartido.getJugadores.size < 10){	
 		
-			this.partido.agregarJugador (jugador, "solidario")
+			this.getPartido.agregarJugador (jugador, "solidario")
 		
 		}
 	}

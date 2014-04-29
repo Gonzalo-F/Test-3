@@ -14,6 +14,9 @@ class Partido {
 		this.hora = hora
 		this.fecha = fecha
 		this.lugar = lugar
+		this.jugadores = newArrayList()
+ 		this.solidarios = newArrayList()
+ 		this.condicionales = newArrayList()
 	}
 	
 	
@@ -38,4 +41,7 @@ class Partido {
 			}
 	}
 	
+	def tieneJugador(Jugador jugador) {
+		jugadores.contains(jugador)
+	}
 }

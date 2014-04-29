@@ -1,3 +1,4 @@
+package vNati 
 
 class Jugador {
 	@Property int edad

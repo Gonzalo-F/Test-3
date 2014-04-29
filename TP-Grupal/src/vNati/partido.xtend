@@ -1,4 +1,4 @@
-
+package vNati 
 
 import java.util.ArrayList
 
@@ -17,13 +17,13 @@ class Partido {
 	
 	def agregarJugador(Jugador jugador, String tipoInscripcion){
 		if (tipoInscripcion == "estandar"){
-			jugadores.add(jugador)
+			getJugadores.add(jugador)
 			}
 		else if(tipoInscripcion == "solidario"){
-				solidarios.add(jugador)
+				getSolidarios.add(jugador)
 			}
 			else{
-				condicionales.add(jugador)
+				getCondicionales.add(jugador)
 			}
 	}
 	
