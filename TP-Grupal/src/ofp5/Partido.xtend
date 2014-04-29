@@ -10,8 +10,8 @@ class Partido {
 	ArrayList<Jugador> condicionales
 	int hora
 	int fecha
-	
-	new(int hora, int fecha, String lugar){
+
+	new(int hora, int fecha, String lugar) {
 		this.hora = hora
 		this.fecha = fecha
 		this.lugar = lugar
@@ -19,34 +19,38 @@ class Partido {
 		this.solidarios = newArrayList()
 		this.condicionales = newArrayList()
 	}
-	
-	
-	def inscribirA(Jugador jugador, String tipoInscripcion){
-		if (tipoInscripcion == "estandar"){
-			new InscEstandar().inscribir(jugador, this)
-			}
-		else {
-			if(tipoInscripcion == "solidario"){
+
+	def inscribirA(Jugador jugador, String tipoInscripcion) {
+		if (tipoInscripcion == "estandar") {
+
+			/* Solo lo hago para que ande new InscEstandar().inscribir(jugador, this) */
+			jugadores.add(jugador)
+		} else {
+			if (tipoInscripcion == "solidario") {
 				new InscSolidario().inscribir(jugador, this)
 			}
-			
-			}
-	}
-	
-	def agregarJugador(Jugador jugador, String tipoInscripcion){
-		if (tipoInscripcion == "estandar"){
-			jugadores.add(jugador)
-			}
-		else if(tipoInscripcion == "solidario"){
-				solidarios.add(jugador)
-			}
-			else{
-				condicionales.add(jugador)
-			}
+
+		}
 	}
 
-def tieneJugador(Jugador jugador) {
-		jugadores.exists[jugador]
+	def agregarJugador(Jugador jugador, String tipoInscripcion) {
+		if (tipoInscripcion == "estandar") {
+			jugadores.add(jugador)
+		} else if (tipoInscripcion == "solidario") {
+			solidarios.add(jugador)
+		} else {
+			condicionales
+	}
+}
+	
+	def tamanioLista() {
+		jugadores.size
 	}
 	
+	def tieneJugador(Jugador jugador) {
+
+		/*HELP!!!! */
+		jugadores.exists(jugador)
+	}
+
 }
