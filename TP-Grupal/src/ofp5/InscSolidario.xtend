@@ -7,15 +7,11 @@ class InscSolidario implements Inscripcion {
 			{	
 				partido.agregarJugador (jugador, 'solidario')
 			}
-		else if ((partido.jugadores.size < 10) && (partido.solidarios.size < 10))
-			{
-				partido.agregarJugador (jugador, 'solidario')
-			}
-			else
+		else if ((partido.jugadores.size < 10) && (partido.solidarios.size > 10))
 			{
 				partido.solidarios.remove(partido.solidarios.get(1))
 				partido.agregarJugador (jugador, 'solidario')
 			}
-		
+					
 	}
 }

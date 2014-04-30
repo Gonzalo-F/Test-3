@@ -52,19 +52,16 @@ public class InscSolidario implements Inscripcion {
       } else {
         ArrayList<Jugador> _solidarios_2 = this.getSolidarios();
         int _size_3 = _solidarios_2.size();
-        boolean _lessThan_3 = (_size_3 < 10);
-        _and_1 = _lessThan_3;
+        boolean _greaterThan = (_size_3 > 10);
+        _and_1 = _greaterThan;
       }
       if (_and_1) {
         ArrayList<Jugador> _solidarios_3 = this.getSolidarios();
-        _solidarios_3.add(jugador);
-      } else {
         ArrayList<Jugador> _solidarios_4 = this.getSolidarios();
+        Jugador _get = _solidarios_4.get(1);
+        _solidarios_3.remove(_get);
         ArrayList<Jugador> _solidarios_5 = this.getSolidarios();
-        Jugador _get = _solidarios_5.get(1);
-        _solidarios_4.remove(_get);
-        ArrayList<Jugador> _solidarios_6 = this.getSolidarios();
-        _solidarios_6.add(jugador);
+        _solidarios_5.add(jugador);
       }
     }
   }
