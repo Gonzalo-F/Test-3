@@ -3,7 +3,7 @@ package tests
  import static org.junit.Assert.*
  import org.junit.Test
  
- class Test3 {
+ class TestInscripcion {
  	@Test
  	def testInscribirEstandar() {
  		var ofp5.Partido partido = new ofp5.Partido(2040, 20140413, 'Tinglado')

@@ -10,15 +10,19 @@ class InscSolidario implements Inscripcion {
 		this.solidarios = newArrayList()
 	}
 	
-	override inscribir (Jugador jugador){
-		if (solidarios.size < 10)
-		{	
+	override inscribir (Jugador jugador, Partido partido){
+		if ((partido.inscEstandar.jugadores.size < 10) && (solidarios.size < 10))
+			{	
 				solidarios.add(jugador)
-		}
-		else
-		{
-			solidarios.remove(solidarios.get(1))
-			solidarios.add(jugador)
-		}
+			}
+		else if ((partido.inscEstandar.jugadores.size < 10) && (solidarios.size < 10))
+			{
+				solidarios.add(jugador)
+			}
+			else
+			{
+				solidarios.remove(solidarios.get(1))
+				solidarios.add(jugador)
+			}
 	}
 }

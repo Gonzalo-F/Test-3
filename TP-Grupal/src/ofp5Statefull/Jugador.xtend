@@ -6,7 +6,7 @@ class Jugador {
 	String nombre
 	 
 	
-	new(int edad, String nombre){
+	new (int edad, String nombre){
 		this.edad = edad
 		this.nombre = nombre
 	}

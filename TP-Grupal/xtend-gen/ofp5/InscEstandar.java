@@ -1,5 +1,6 @@
 package ofp5;
 
+import excepciones.InscripcionRechazadaException;
 import java.util.ArrayList;
 import ofp5.Inscripcion;
 import ofp5.Jugador;
@@ -13,6 +14,8 @@ public class InscEstandar implements Inscripcion {
     boolean _lessThan = (_size < 10);
     if (_lessThan) {
       partido.agregarJugador(jugador, "estandar");
+    } else {
+      throw new InscripcionRechazadaException("Ya hay 10 inscriptos");
     }
   }
 }

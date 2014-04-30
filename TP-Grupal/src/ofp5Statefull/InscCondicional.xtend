@@ -10,9 +10,10 @@ class InscCondicional implements Inscripcion {
 		this.condicionales = newArrayList()
 	}
 	
-	override inscribir (Jugador jugador){
-			
-		condicionales.add(jugador)
-		
+	override inscribir (Jugador jugador, Partido partido){
+		if (partido.inscEstandar.jugadores.size < 10)
+		{
+			condicionales.add(jugador)
 		}
+	}
 }

@@ -4,11 +4,11 @@ class Partido {
 	String lugar
 	int hora
 	int fecha
-	InscEstandar inscEstandar
+	@Property InscEstandar inscEstandar
 	InscSolidario inscSolidario
 	InscCondicional inscCondicional
 
-	new(int hora, int fecha, String lugar) {
+	new (int hora, int fecha, String lugar) {
 		this.hora = hora
 		this.fecha = fecha
 		this.lugar = lugar
@@ -21,15 +21,15 @@ class Partido {
 		switch tipoInscripcion {
 		case "estandar":
 			{
-				this.inscEstandar.inscribir(jugador)
+				this.inscEstandar.inscribir(jugador, this)
 			}
 		case "solidario":
 			{
-				this.inscSolidario.inscribir(jugador)
+				this.inscSolidario.inscribir(jugador, this)
 			}
 		case "condicional":
 			{ 
-				this.inscCondicional.inscribir(jugador)
+				this.inscCondicional.inscribir(jugador, this)
 			}
 		}
 	}

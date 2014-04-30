@@ -3,6 +3,7 @@ package ofp5Statefull;
 import java.util.ArrayList;
 import ofp5Statefull.Inscripcion;
 import ofp5Statefull.Jugador;
+import ofp5Statefull.Partido;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
 @SuppressWarnings("all")
@@ -22,7 +23,7 @@ public class InscEstandar implements Inscripcion {
     this.setJugadores(_newArrayList);
   }
   
-  public void inscribir(final Jugador jugador) {
+  public void inscribir(final Jugador jugador, final Partido partido) {
     ArrayList<Jugador> _jugadores = this.getJugadores();
     int _size = _jugadores.size();
     boolean _lessThan = (_size < 10);

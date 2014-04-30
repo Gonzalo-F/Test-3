@@ -10,7 +10,7 @@ class InscEstandar implements Inscripcion {
 		this.jugadores = newArrayList()
 	}
 	
-	override inscribir (Jugador jugador){
+	override inscribir (Jugador jugador, Partido partido){
 		if (jugadores.size < 10){	
 		
 			jugadores.add(jugador)

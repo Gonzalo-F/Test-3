@@ -77,8 +77,15 @@ public class Partido {
     if (!_matched) {
       if (Objects.equal(tipoInscripcion,"condicional")) {
         _matched=true;
-        ArrayList<Jugador> _condicionales = this.getCondicionales();
-        _switchResult = _condicionales.add(jugador);
+        boolean _xifexpression = false;
+        ArrayList<Jugador> _jugadores = this.getJugadores();
+        int _size = _jugadores.size();
+        boolean _lessThan = (_size < 10);
+        if (_lessThan) {
+          ArrayList<Jugador> _condicionales = this.getCondicionales();
+          _xifexpression = _condicionales.add(jugador);
+        }
+        _switchResult = _xifexpression;
       }
     }
     return _switchResult;

@@ -15,7 +15,15 @@ public class Partido {
   
   private int fecha;
   
-  private InscEstandar inscEstandar;
+  private InscEstandar _inscEstandar;
+  
+  public InscEstandar getInscEstandar() {
+    return this._inscEstandar;
+  }
+  
+  public void setInscEstandar(final InscEstandar inscEstandar) {
+    this._inscEstandar = inscEstandar;
+  }
   
   private InscSolidario inscSolidario;
   
@@ -26,7 +34,7 @@ public class Partido {
     this.fecha = fecha;
     this.lugar = lugar;
     InscEstandar _inscEstandar = new InscEstandar();
-    this.inscEstandar = _inscEstandar;
+    this.setInscEstandar(_inscEstandar);
     InscSolidario _inscSolidario = new InscSolidario();
     this.inscSolidario = _inscSolidario;
     InscCondicional _inscCondicional = new InscCondicional();
@@ -38,19 +46,20 @@ public class Partido {
     if (!_matched) {
       if (Objects.equal(tipoInscripcion,"estandar")) {
         _matched=true;
-        this.inscEstandar.inscribir(jugador);
+        InscEstandar _inscEstandar = this.getInscEstandar();
+        _inscEstandar.inscribir(jugador, this);
       }
     }
     if (!_matched) {
       if (Objects.equal(tipoInscripcion,"solidario")) {
         _matched=true;
-        this.inscSolidario.inscribir(jugador);
+        this.inscSolidario.inscribir(jugador, this);
       }
     }
     if (!_matched) {
       if (Objects.equal(tipoInscripcion,"condicional")) {
         _matched=true;
-        this.inscCondicional.inscribir(jugador);
+        this.inscCondicional.inscribir(jugador, this);
       }
     }
   }
@@ -61,7 +70,8 @@ public class Partido {
     if (!_matched) {
       if (Objects.equal(tipoInscripcion,"estandar")) {
         _matched=true;
-        ArrayList<Jugador> _jugadores = this.inscEstandar.getJugadores();
+        InscEstandar _inscEstandar = this.getInscEstandar();
+        ArrayList<Jugador> _jugadores = _inscEstandar.getJugadores();
         _switchResult = _jugadores.contains(jugador);
       }
     }

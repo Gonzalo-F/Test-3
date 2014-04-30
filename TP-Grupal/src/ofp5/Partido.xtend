@@ -31,7 +31,10 @@ class Partido {
 			}
 		case "condicional":
 			{ 
-				condicionales.add(jugador)
+				if (jugadores.size < 10)
+				{
+					condicionales.add(jugador)
+				}
 			}
 		}
 	}

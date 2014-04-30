@@ -1,16 +1,16 @@
 package tests;
 
 import excepciones.InscripcionRechazadaException;
-import ofp5.Jugador;
-import ofp5.Partido;
+import ofp5Statefull.Jugador;
+import ofp5Statefull.Partido;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.junit.Assert;
 import org.junit.Test;
 
 @SuppressWarnings("all")
-public class Test3 {
+public class TestInscripcionStatefull {
   @Test
-  public void testInscribirEstandar() {
+  public void testInscribirEstandarStatefull() {
     Partido partido = new Partido(2040, 20140413, "Tinglado");
     Jugador jugador = new Jugador(15, "Pirulito");
     partido.inscribirA(jugador, "estandar");
@@ -19,7 +19,7 @@ public class Test3 {
   }
   
   @Test
-  public void testInscribirSolidario() {
+  public void testInscribirSolidarioStatefull() {
     Partido partido = new Partido(2040, 20140413, "Tinglado");
     Jugador jugador = new Jugador(15, "Pirulito");
     partido.inscribirA(jugador, "solidario");
@@ -28,7 +28,7 @@ public class Test3 {
   }
   
   @Test
-  public void testInscribirJugadorMasde10enEstandarRechaza() {
+  public void testInscribirJugadorMasde10enEstandarRechazaStatefull() {
     Partido partido = new Partido(2040, 20140413, "Tinglado");
     Jugador jugador1 = new Jugador(15, "Player1");
     partido.inscribirA(jugador1, "estandar");
@@ -50,13 +50,13 @@ public class Test3 {
     partido.inscribirA(jugador9, "estandar");
     Jugador jugador10 = new Jugador(15, "Player10");
     partido.inscribirA(jugador10, "estandar");
-    Jugador jugador11 = new Jugador(15, "Player10");
+    Jugador jugador11 = new Jugador(15, "Player11");
     try {
       partido.inscribirA(jugador11, "estandar");
     } catch (final Throwable _t) {
       if (_t instanceof InscripcionRechazadaException) {
         final InscripcionRechazadaException e = (InscripcionRechazadaException)_t;
-        Assert.fail();
+        return;
       } else {
         throw Exceptions.sneakyThrow(_t);
       }
