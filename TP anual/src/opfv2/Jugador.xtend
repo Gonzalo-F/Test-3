@@ -14,4 +14,8 @@ class Jugador {
 	{
 		nombre
 	}
+	
+	def incribirseA(Partido partido){
+		partido.tipoInscripcion.inscribir(this, Partido partido)
+	}
 }

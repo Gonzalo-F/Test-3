@@ -5,6 +5,7 @@ class Partido {
 	String lugar
 	int hora
 	int fecha
+	TipoInscripcion tipoinscripcion
 
 	new(int hora, int fecha, String lugar) {
 		this.hora = hora
