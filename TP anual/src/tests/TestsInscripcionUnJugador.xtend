@@ -2,22 +2,31 @@ package tests
  
  import static org.junit.Assert.*
  import org.junit.Test
- 
+ import opfv2.Partido
+ import opfv2.Jugador
+
  class TestInscripcion {
+ 	
  	@Test
  	def testInscribirEstandar() {
- 		var opfv2.Partido partido = new opfv2.Partido (2040, 20140413, 'Tinglado')
- 		var opfv2.Jugador jugador = new opfv2.Jugador(15, "Pirulito")
- 		partido.inscribirA(jugador, 'estandar')
- 		assertTrue(partido.estaInscripto(jugador, 'estandar'))
+ 		
+ 		var Partido partido = new Partido (2040, 20140413, 'Tinglado')
+ 		var Jugador jugador = new Jugador(15, "Pirulito")
+ 		
+ 		jugador.incribirseA(partido)
+ 		
+ 		assertTrue(true)
  
  	}
  	@Test
  	def testInscribirSolidario() {
- 		var opfv2.Partido partido = new opfv2.Partido(2040, 20140413, 'Tinglado')
- 		var opfv2.Jugador jugador = new opfv2.Jugador(15, "Pirulito")
- 		partido.inscribirA(jugador, 'solidario')
- 		assertTrue(partido.estaInscripto(jugador, 'solidario'))
+ 		
+ 		var Partido partido = new Partido(2040, 20140413, 'Tinglado')
+ 		var Jugador jugador = new Jugador(15, "Pirulito")
+ 		
+ 		jugador.incribirseA(partido)
+ 		
+ 		assertTrue(true)
  	}
 
  }

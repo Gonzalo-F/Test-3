@@ -1,5 +1,7 @@
 package opfv2;
 
+import opfv2.Partido;
+
 @SuppressWarnings("all")
 public class Jugador {
   private int _edad;
@@ -21,5 +23,12 @@ public class Jugador {
   
   public String getNombre() {
     return this.nombre;
+  }
+  
+  public Object incribirseA(final Partido partido) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nextraneous input \'partido\' expecting \')\'"
+      + "\nThe method tipoInscripcion is undefined for the type Jugador"
+      + "\ninscribir cannot be resolved");
   }
 }
