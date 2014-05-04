@@ -1,4 +1,4 @@
-package ofp5Statefull;
+package opfv2;
 
 @SuppressWarnings("all")
 public class Jugador {
