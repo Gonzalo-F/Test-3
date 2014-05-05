@@ -53,5 +53,11 @@ public class Partido {
     this.hora = hora;
     this.fecha = fecha;
     this.setLugar(lugar);
+    ArrayList<Jugador> _arrayList = new ArrayList<Jugador>();
+    this.setEstandares(_arrayList);
+    ArrayList<Jugador> _arrayList_1 = new ArrayList<Jugador>();
+    this.setSolidarios(_arrayList_1);
+    ArrayList<Jugador> _arrayList_2 = new ArrayList<Jugador>();
+    this.setCondicionales(_arrayList_2);
   }
 }

@@ -15,6 +15,8 @@ class Partido {
 		this.hora = hora
 		this.fecha = fecha
 		this.lugar = lugar
-
+		this.estandares = new ArrayList()
+		this.solidarios = new ArrayList()
+		this.condicionales = new ArrayList()
 	}
 }
