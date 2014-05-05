@@ -9,27 +9,21 @@ import opfv2.InscripSolidario
 
 class TestInscripcion {
 
+var Partido partido = new Partido(2040, 20140413, 'Tinglado')
+var Jugador jugador = new Jugador(15, "Pirulito")
+
 	@Test
 	def testInscribirEstandar() {
-
-		var Partido partido = new Partido(2040, 20140413, 'Tinglado')
-		var Jugador jugador = new Jugador(15, "Pirulito")
-
 		jugador.incribirseEn(partido, new InscripEstandar)
-
-		assertTrue(true)
+		assertTrue(jugador.estaEnLista(partido.estandares))
 
 	}
 
 	@Test
 	def testInscribirSolidario() {
-
-		var Partido partido = new Partido(2040, 20140413, 'Tinglado')
-		var Jugador jugador = new Jugador(15, "Pirulito")
-
 		jugador.incribirseEn(partido, new InscripSolidario)
 
-		assertTrue(true)
+		assertTrue(jugador.estaEnLista(partido.solidarios))
 	}
 
 }
