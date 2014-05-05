@@ -1,5 +1,7 @@
 package opfv2
 
+import excepciones.InscripcionRechazadaException
+
 class InscripSolidario implements TipoInscripcion {
 	
 	

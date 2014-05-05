@@ -1,6 +1,9 @@
 package opfv2;
 
-import opfv2.TipoInscripcion;
+import java.util.ArrayList;
+import opfv2.InscripCondicional;
+import opfv2.InscripEstandar;
+import opfv2.InscripSolidario;
 
 @SuppressWarnings("all")
 public class Partido {
@@ -18,7 +21,35 @@ public class Partido {
   
   private int fecha;
   
-  private TipoInscripcion tipoinscripcion;
+  private ArrayList<InscripEstandar> _estandares;
+  
+  public ArrayList<InscripEstandar> getEstandares() {
+    return this._estandares;
+  }
+  
+  public void setEstandares(final ArrayList<InscripEstandar> estandares) {
+    this._estandares = estandares;
+  }
+  
+  private ArrayList<InscripSolidario> _solidarios;
+  
+  public ArrayList<InscripSolidario> getSolidarios() {
+    return this._solidarios;
+  }
+  
+  public void setSolidarios(final ArrayList<InscripSolidario> solidarios) {
+    this._solidarios = solidarios;
+  }
+  
+  private ArrayList<InscripCondicional> _condicionales;
+  
+  public ArrayList<InscripCondicional> getCondicionales() {
+    return this._condicionales;
+  }
+  
+  public void setCondicionales(final ArrayList<InscripCondicional> condicionales) {
+    this._condicionales = condicionales;
+  }
   
   public Partido(final int hora, final int fecha, final String lugar) {
     this.hora = hora;
