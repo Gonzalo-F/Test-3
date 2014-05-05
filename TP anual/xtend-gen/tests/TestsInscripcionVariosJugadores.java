@@ -13,7 +13,7 @@ public class TestsInscripcionVariosJugadores {
     throw new Error("Unresolved compilation problems:"
       + "\nInscripcion cannot be resolved to a type."
       + "\nInscripcion cannot be resolved."
-      + "\nInvalid number of arguments. The method incribirseA(Partido, TipoInscripcion) is not applicable for the arguments (Partido)"
+      + "\nThe method incribirseA is undefined for the type TestsInscripcionVariosJugadores"
       + "\ninscribir cannot be resolved");
   }
   
@@ -21,8 +21,9 @@ public class TestsInscripcionVariosJugadores {
   public Object testInscribirJugadorMasde10enEstandarRechaza() {
     throw new Error("Unresolved compilation problems:"
       + "\nInscripcion cannot be resolved to a type."
+      + "\nInscripcionRechazadaException cannot be resolved to a type."
       + "\nInscripcion cannot be resolved."
-      + "\nInvalid number of arguments. The method incribirseA(Partido, TipoInscripcion) is not applicable for the arguments (Partido)"
+      + "\nThe method incribirseA is undefined for the type TestsInscripcionVariosJugadores"
       + "\ninscribir cannot be resolved");
   }
 }
