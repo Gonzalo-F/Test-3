@@ -8,6 +8,7 @@ import opfv2.TipoInscripcion;
 public class InscripSolidario implements TipoInscripcion {
   public void inscribir(final Jugador jugador, final Partido partido) {
     throw new Error("Unresolved compilation problems:"
+      + "\nInscripcionRechazadaException cannot be resolved."
       + "\nType mismatch: cannot convert from Jugador to InscripSolidario");
   }
 }
