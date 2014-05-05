@@ -13,6 +13,7 @@ public class TestsInscripcionVariosJugadores {
     throw new Error("Unresolved compilation problems:"
       + "\nInscripcion cannot be resolved to a type."
       + "\nInscripcion cannot be resolved."
+      + "\nInvalid number of arguments. The method incribirseA(Partido, TipoInscripcion) is not applicable for the arguments (Partido)"
       + "\ninscribir cannot be resolved");
   }
   
@@ -21,6 +22,7 @@ public class TestsInscripcionVariosJugadores {
     throw new Error("Unresolved compilation problems:"
       + "\nInscripcion cannot be resolved to a type."
       + "\nInscripcion cannot be resolved."
+      + "\nInvalid number of arguments. The method incribirseA(Partido, TipoInscripcion) is not applicable for the arguments (Partido)"
       + "\ninscribir cannot be resolved");
   }
 }

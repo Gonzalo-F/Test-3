@@ -1,6 +1,7 @@
 package opfv2;
 
 import opfv2.Partido;
+import opfv2.TipoInscripcion;
 
 @SuppressWarnings("all")
 public class Jugador {
@@ -25,10 +26,8 @@ public class Jugador {
     return this.nombre;
   }
   
-  public Object incribirseA(final Partido partido) {
+  public void incribirseEn(final Partido partido, final TipoInscripcion tipoInscripcion) {
     throw new Error("Unresolved compilation problems:"
-      + "\nextraneous input \'partido\' expecting \')\'"
-      + "\nThe method tipoInscripcion is undefined for the type Jugador"
-      + "\ninscribir cannot be resolved");
+      + "\nType mismatch: cannot convert from Jugador to Jugador");
   }
 }
