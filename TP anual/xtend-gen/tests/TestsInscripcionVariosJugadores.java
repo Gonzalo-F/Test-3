@@ -11,12 +11,16 @@ public class TestsInscripcionVariosJugadores {
   @Before
   public void testInicio() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method inscribir is undefined for the type TestsInscripcionVariosJugadores");
+      + "\nInscripcion cannot be resolved to a type."
+      + "\nInscripcion cannot be resolved."
+      + "\ninscribir cannot be resolved");
   }
   
   @Test
   public Object testInscribirJugadorMasde10enEstandarRechaza() {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method inscribir is undefined for the type TestsInscripcionVariosJugadores");
+      + "\nInscripcion cannot be resolved to a type."
+      + "\nInscripcion cannot be resolved."
+      + "\ninscribir cannot be resolved");
   }
 }
