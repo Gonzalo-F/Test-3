@@ -1,9 +1,7 @@
 package opfv2;
 
 import java.util.ArrayList;
-import opfv2.InscripCondicional;
-import opfv2.InscripEstandar;
-import opfv2.InscripSolidario;
+import opfv2.Jugador;
 
 @SuppressWarnings("all")
 public class Partido {
@@ -21,33 +19,33 @@ public class Partido {
   
   private int fecha;
   
-  private ArrayList<InscripEstandar> _estandares;
+  private ArrayList<Jugador> _estandares;
   
-  public ArrayList<InscripEstandar> getEstandares() {
+  public ArrayList<Jugador> getEstandares() {
     return this._estandares;
   }
   
-  public void setEstandares(final ArrayList<InscripEstandar> estandares) {
+  public void setEstandares(final ArrayList<Jugador> estandares) {
     this._estandares = estandares;
   }
   
-  private ArrayList<InscripSolidario> _solidarios;
+  private ArrayList<Jugador> _solidarios;
   
-  public ArrayList<InscripSolidario> getSolidarios() {
+  public ArrayList<Jugador> getSolidarios() {
     return this._solidarios;
   }
   
-  public void setSolidarios(final ArrayList<InscripSolidario> solidarios) {
+  public void setSolidarios(final ArrayList<Jugador> solidarios) {
     this._solidarios = solidarios;
   }
   
-  private ArrayList<InscripCondicional> _condicionales;
+  private ArrayList<Jugador> _condicionales;
   
-  public ArrayList<InscripCondicional> getCondicionales() {
+  public ArrayList<Jugador> getCondicionales() {
     return this._condicionales;
   }
   
-  public void setCondicionales(final ArrayList<InscripCondicional> condicionales) {
+  public void setCondicionales(final ArrayList<Jugador> condicionales) {
     this._condicionales = condicionales;
   }
   

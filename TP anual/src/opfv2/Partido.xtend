@@ -7,9 +7,9 @@ class Partido {
 	String lugar
 	int hora
 	int fecha
-	@Property ArrayList <InscripEstandar> estandares
-	@Property ArrayList <InscripSolidario> solidarios
-	@Property ArrayList <InscripCondicional> condicionales
+	@Property ArrayList <Jugador> estandares
+	@Property ArrayList <Jugador> solidarios
+	@Property ArrayList <Jugador> condicionales
 	
 	new(int hora, int fecha, String lugar) {
 		this.hora = hora

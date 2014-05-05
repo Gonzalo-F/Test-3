@@ -15,7 +15,7 @@ var Jugador jugador = new Jugador(15, "Pirulito")
 	@Test
 	def testInscribirEstandar() {
 		jugador.incribirseEn(partido, new InscripEstandar)
-		assertTrue(jugador.estaEnLista(partido.estandares))
+		assertTrue(partido.estandares.contains(jugador))
 
 	}
 
@@ -23,7 +23,7 @@ var Jugador jugador = new Jugador(15, "Pirulito")
 	def testInscribirSolidario() {
 		jugador.incribirseEn(partido, new InscripSolidario)
 
-		assertTrue(jugador.estaEnLista(partido.solidarios))
+		assertTrue(partido.solidarios.contains(jugador))
 	}
 
 }
