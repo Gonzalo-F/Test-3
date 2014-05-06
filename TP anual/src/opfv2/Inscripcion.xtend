@@ -2,12 +2,12 @@ package opfv2
 
 class Inscripcion {
 	@Property
-	TipoInscripcion tipoDeInscripcion
+	TipoInscripcion tipo
 	Partido partido
 	Jugador jugador
 	
 	def inscribir (Jugador unJugador, Partido unPartido){
-		tipoDeInscripcion.inscribir (unJugador, unPartido)
+		tipo.inscribir (unJugador, unPartido)
 	}
 	new (Jugador unJugador, Partido unPartido){
 		this.jugador = unJugador

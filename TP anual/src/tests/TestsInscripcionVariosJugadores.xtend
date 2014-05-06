@@ -3,6 +3,7 @@ package tests
 import excepciones.InscripcionRechazadaException
 import opfv2.Jugador
 import opfv2.Partido
+import opfv2.Inscripcion
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.*
@@ -13,18 +14,22 @@ class TestsInscripcionVariosJugadores {
 	var Partido partido = new Partido(2040, 20140413, "El tinglado")
 
 	@Before
-	def testInicio() {
+	def inicio() {
 		for (i : 1 .. 10) {
 			var Jugador jugador = new Jugador(i, "Player" + i)
-			jugador.incribirseEn(partido, new InscripEstandar)
+			var Inscripcion inscri = new Inscripcion (jugador, partido)
+			inscri.tipo = new InscripEstandar()
+			inscri.inscribir(jugador,partido)
 		}
 	}
 
 	@Test
 	def testInscribirJugadorMasde10enEstandarRechaza() {
 		var Jugador jugador11 = new Jugador(15, "Player11")
+		var Inscripcion inscri = new Inscripcion (jugador11, partido)
+			inscri.tipo = new InscripEstandar()
 		try {
-			jugador11.incribirseEn(partido, new InscripEstandar)
+			inscri.inscribir(jugador11,partido)
 		} catch (InscripcionRechazadaException e) {
 			fail()
 		}
