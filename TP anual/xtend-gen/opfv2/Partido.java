@@ -1,7 +1,7 @@
 package opfv2;
 
 import java.util.ArrayList;
-import opfv2.Jugador;
+import opfv2.Inscripcion;
 
 @SuppressWarnings("all")
 public class Partido {
@@ -19,33 +19,33 @@ public class Partido {
   
   private int fecha;
   
-  private ArrayList<Jugador> _estandares;
+  private ArrayList<Inscripcion> _estandares;
   
-  public ArrayList<Jugador> getEstandares() {
+  public ArrayList<Inscripcion> getEstandares() {
     return this._estandares;
   }
   
-  public void setEstandares(final ArrayList<Jugador> estandares) {
+  public void setEstandares(final ArrayList<Inscripcion> estandares) {
     this._estandares = estandares;
   }
   
-  private ArrayList<Jugador> _solidarios;
+  private ArrayList<Inscripcion> _solidarios;
   
-  public ArrayList<Jugador> getSolidarios() {
+  public ArrayList<Inscripcion> getSolidarios() {
     return this._solidarios;
   }
   
-  public void setSolidarios(final ArrayList<Jugador> solidarios) {
+  public void setSolidarios(final ArrayList<Inscripcion> solidarios) {
     this._solidarios = solidarios;
   }
   
-  private ArrayList<Jugador> _condicionales;
+  private ArrayList<Inscripcion> _condicionales;
   
-  public ArrayList<Jugador> getCondicionales() {
+  public ArrayList<Inscripcion> getCondicionales() {
     return this._condicionales;
   }
   
-  public void setCondicionales(final ArrayList<Jugador> condicionales) {
+  public void setCondicionales(final ArrayList<Inscripcion> condicionales) {
     this._condicionales = condicionales;
   }
   
@@ -53,11 +53,11 @@ public class Partido {
     this.hora = hora;
     this.fecha = fecha;
     this.setLugar(lugar);
-    ArrayList<Jugador> _arrayList = new ArrayList<Jugador>();
+    ArrayList<Inscripcion> _arrayList = new ArrayList<Inscripcion>();
     this.setEstandares(_arrayList);
-    ArrayList<Jugador> _arrayList_1 = new ArrayList<Jugador>();
+    ArrayList<Inscripcion> _arrayList_1 = new ArrayList<Inscripcion>();
     this.setSolidarios(_arrayList_1);
-    ArrayList<Jugador> _arrayList_2 = new ArrayList<Jugador>();
+    ArrayList<Inscripcion> _arrayList_2 = new ArrayList<Inscripcion>();
     this.setCondicionales(_arrayList_2);
   }
 }
