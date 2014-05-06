@@ -6,8 +6,8 @@ class Inscripcion {
 	Partido partido
 	Jugador jugador
 	
-	def inscribir (Jugador unJugador, Partido unPartido){
-		tipo.inscribirA(unJugador, unPartido)
+	def void inscribir (Jugador unJugador, Partido unPartido){
+		tipo.inscribirA(unJugador, unPartido, this)
 	}
 	new (Jugador unJugador, Partido unPartido){
 		this.jugador = unJugador

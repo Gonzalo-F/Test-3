@@ -1,22 +1,18 @@
 package opfv2
 
 import excepciones.InscripcionRechazadaException
-import opfv2.TipoInscripcion
-import opfv2.Jugador
-import opfv2.Partido
 
-class InscripEstandar extends TipoInscripcion {
+class InscripEstandar implements TipoInscripcion {
 
-	new(Inscripcion inscripto) {
-		super(inscripto)
-	}
-	
-	override inscribirA (Jugador jugador, Partido partido) {
+	override inscribirA (Jugador jugador, Partido partido, Inscripcion unaInsc) {
 		if (partido.estandares.size < 10) {
-			partido.estandares.add (unaInscripcion)
+			partido.estandares.add (unaInsc)
 		} else {
 			throw new InscripcionRechazadaException ("Ya hay 10 inscriptos estandar en la lista")
 		}
 		
 	}
+	
+	
+	
 }

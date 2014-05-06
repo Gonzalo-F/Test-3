@@ -10,24 +10,24 @@ import opfv2.InscripSolidario
 
 class TestInscripcion {
 
-	var Partido unPartido = new Partido(2040, 20140413, 'Tinglado')
-	var Jugador unJugador = new Jugador(15, "Pirulito")
+	var Partido partido = new Partido(2040, 20140413, 'Tinglado')
+	var Jugador jugador = new Jugador(15, "Pirulito")
 
 	@Test
 	def testInscribirEstandar() {
-		var inscri = new Inscripcion(unJugador, unPartido)
-		inscri.tipo = new InscripEstandar(inscri)
-		inscri.inscribir(unJugador, unPartido)
-		assertTrue(unPartido.estandares.contains(unJugador))
+		var Inscripcion inscri = new Inscripcion(jugador, partido)
+		inscri.tipo = new InscripEstandar()
+		inscri.inscribir(jugador, partido)
+		assertTrue(partido.estandares.contains(jugador))
 
 	}
 
 	@Test
 	def testInscribirSolidario() {
-		var Inscripcion inscri = new Inscripcion(unJugador, unPartido)
+		var Inscripcion inscri = new Inscripcion(jugador, partido)
 		inscri.tipo = new InscripSolidario()
-		inscri.inscribir(unJugador, unPartido)
-		assertTrue(unPartido.solidarios.contains(unJugador))
+		inscri.inscribir(jugador, partido)
+		assertTrue(partido.solidarios.contains(jugador))
 	}
 
 }
