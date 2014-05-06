@@ -7,8 +7,10 @@ class Inscripcion {
 	Jugador jugador
 	
 	def inscribir (Jugador unJugador, Partido unPartido){
-		this.partido = unPartido
-		this.jugador = unJugador
 		tipoDeInscripcion.inscribir (unJugador, unPartido)
+	}
+	new (Jugador unJugador, Partido unPartido){
+		this.jugador = unJugador
+		this.partido = unPartido
 	}
 }

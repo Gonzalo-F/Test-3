@@ -15,7 +15,7 @@ class TestInscripcion {
 
 	@Test
 	def testInscribirEstandar() {
-		var Inscripcion inscri1 = new Inscripcion()
+		var Inscripcion inscri1 = new Inscripcion(jugador, partido)
 		inscri1.tipoDeInscripcion = new InscripEstandar()
 		inscri1.inscribir(jugador, partido)
 		assertTrue(partido.estandares.contains(jugador))
@@ -24,7 +24,7 @@ class TestInscripcion {
 
 	@Test
 	def testInscribirSolidario() {
-		var Inscripcion inscri1 = new Inscripcion()
+		var Inscripcion inscri1 = new Inscripcion(jugador, partido)
 		inscri1.tipoDeInscripcion = new InscripSolidario()
 		inscri1.inscribir(jugador, partido)
 		assertTrue(partido.solidarios.contains(jugador))
