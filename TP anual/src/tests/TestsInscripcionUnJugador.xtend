@@ -4,6 +4,7 @@ import static org.junit.Assert.*
 import org.junit.Test
 import opfv2.Partido
 import opfv2.Jugador
+import opfv2.Inscripcion
 import opfv2.InscripEstandar
 import opfv2.InscripSolidario
 
@@ -14,15 +15,18 @@ class TestInscripcion {
 
 	@Test
 	def testInscribirEstandar() {
-		jugador.incribirseEn(partido, new InscripEstandar)
+		var Inscripcion inscri1 = new Inscripcion()
+		inscri1.tipoDeInscripcion = new InscripEstandar()
+		inscri1.inscribir(jugador, partido)
 		assertTrue(partido.estandares.contains(jugador))
 
 	}
 
 	@Test
 	def testInscribirSolidario() {
-		jugador.incribirseEn(partido, new InscripSolidario)
-
+		var Inscripcion inscri1 = new Inscripcion()
+		inscri1.tipoDeInscripcion = new InscripSolidario()
+		inscri1.inscribir(jugador, partido)
 		assertTrue(partido.solidarios.contains(jugador))
 	}
 
