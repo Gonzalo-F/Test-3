@@ -30,20 +30,26 @@ public class TestsInscripcionVariosJugadores {
   }
   
   @Test
-  public void testInscribirJugadorMasde10enEstandarRechaza() {
-    Jugador jugador11 = new Jugador(15, "Player11");
-    Inscripcion inscri = new Inscripcion(jugador11, this.partido);
-    InscripEstandar _inscripEstandar = new InscripEstandar();
-    inscri.setTipo(_inscripEstandar);
-    try {
-      inscri.inscribir(jugador11, this.partido);
-    } catch (final Throwable _t) {
-      if (_t instanceof InscripcionRechazadaException) {
-        final InscripcionRechazadaException e = (InscripcionRechazadaException)_t;
-        Assert.fail();
-      } else {
-        throw Exceptions.sneakyThrow(_t);
+  public Object testInscribirJugadorMasde10enEstandarRechaza() {
+    Object _xblockexpression = null;
+    {
+      Jugador jugador11 = new Jugador(15, "Player11");
+      Inscripcion inscri = new Inscripcion(jugador11, this.partido);
+      InscripEstandar _inscripEstandar = new InscripEstandar();
+      inscri.setTipo(_inscripEstandar);
+      Object _xtrycatchfinallyexpression = null;
+      try {
+        _xtrycatchfinallyexpression = inscri.inscribir(jugador11, this.partido);
+      } catch (final Throwable _t) {
+        if (_t instanceof InscripcionRechazadaException) {
+          final InscripcionRechazadaException e = (InscripcionRechazadaException)_t;
+          Assert.fail();
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
       }
+      _xblockexpression = _xtrycatchfinallyexpression;
     }
+    return _xblockexpression;
   }
 }

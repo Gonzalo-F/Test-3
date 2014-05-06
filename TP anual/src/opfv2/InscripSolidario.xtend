@@ -4,7 +4,7 @@ import excepciones.InscripcionRechazadaException
 
 class InscripSolidario implements TipoInscripcion {
 
-	override inscribir(Jugador jugador, Partido partido, Inscripcion unaInsc) {
+	override inscribirA (Jugador jugador, Partido partido, Inscripcion unaInsc) {
 		if (partido.estandares.size < 10) {
 			partido.solidarios.add(unaInsc)
 		} else {

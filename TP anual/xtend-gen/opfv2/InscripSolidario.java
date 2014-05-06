@@ -9,7 +9,7 @@ import opfv2.TipoInscripcion;
 
 @SuppressWarnings("all")
 public class InscripSolidario implements TipoInscripcion {
-  public void inscribir(final Jugador jugador, final Partido partido, final Inscripcion unaInsc) {
+  public void inscribirA(final Jugador jugador, final Partido partido, final Inscripcion unaInsc) {
     ArrayList<Inscripcion> _estandares = partido.getEstandares();
     int _size = _estandares.size();
     boolean _lessThan = (_size < 10);
