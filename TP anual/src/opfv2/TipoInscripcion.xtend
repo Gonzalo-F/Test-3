@@ -1,5 +1,10 @@
 package opfv2
 
-interface TipoInscripcion {
-	def void inscribirA (Jugador unJugador, Partido unPartido, Inscripcion unaInscripcion)
+abstract class TipoInscripcion {
+	var	Inscripcion unaInscripcion
+	
+	new (Inscripcion insc){
+		this.unaInscripcion = insc
+	}
+	def abstract void inscribirA(Jugador jugador,Partido partido)
 }

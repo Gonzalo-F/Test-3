@@ -5,6 +5,12 @@ import opfv2.Jugador;
 import opfv2.Partido;
 
 @SuppressWarnings("all")
-public interface TipoInscripcion {
-  public abstract void inscribirA(final Jugador unJugador, final Partido unPartido, final Inscripcion unaInscripcion);
+public abstract class TipoInscripcion {
+  private Inscripcion unaInscripcion;
+  
+  public TipoInscripcion(final Inscripcion insc) {
+    this.unaInscripcion = insc;
+  }
+  
+  public abstract void inscribirA(final Jugador jugador, final Partido partido);
 }
