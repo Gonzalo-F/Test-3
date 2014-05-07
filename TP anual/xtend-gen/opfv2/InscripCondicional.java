@@ -14,8 +14,8 @@ public class InscripCondicional implements TipoInscripcion {
     int _size = _estandares.size();
     boolean _lessThan = (_size < 10);
     if (_lessThan) {
-      ArrayList<Inscripcion> _estandares_1 = partido.getEstandares();
-      _estandares_1.add(unaInsc);
+      ArrayList<Inscripcion> _condicionales = partido.getCondicionales();
+      _condicionales.add(unaInsc);
     } else {
       throw new InscripcionRechazadaException("Ya hay 10 inscriptos estandar en la lista");
     }
